@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
+#include "Account.h"
+#include "BMS.h"
 
 using namespace std;
 
 void printMenu() {
 	cout << "MAIN MENU\n";
-	cout << "01. NEW ACCOUN\n";
+	cout << "01. NEW ACCOUNT\n";
 	cout << "02. DEPOSIT AMOUNT\n";
 	cout << "03. WITHDRAW AMOUNT\n";
 	cout << "04. BALANCE ENQUIRY\n";
@@ -16,32 +18,23 @@ void printMenu() {
 	cout << "Select Your Option (1-8)\n";
 }
 
-void printEnd() {
+void programEnd() {
 	cout << "This Program Ends normally\n";
 }
 
-class Account {
-private :
-	string name;
-	string accountNumber;
-	int amount;
-public :
-	Account(string _name, string _accountNumber, int _amount)
-       	: name(_name), accountNumber(_accountNumber), amount(_amount)
-	{ }
-};
-
 int main(int argc, char* argv[]) {
-	cout << "Hello, goorm!" << endl;
-
+	BMS bms;
 	int tmp = 0;
 
 	// Banking Record System
 	
 	do {
+		printMenu();
 		cin >> tmp;
 		if(tmp == 1) {
 			// NEW ACCOLUNT, 계좌 개설
+			bms.addAccount();
+			cout << "계좌 개설 완료\n";
 		}
 		else if (tmp == 2) {
 			// DEPOSIT AMOUNT, 입금
@@ -69,6 +62,7 @@ int main(int argc, char* argv[]) {
 	} while(tmp != 8);
 
 	// Program End	
+	programEnd();
 	
 	return 0;
 }
