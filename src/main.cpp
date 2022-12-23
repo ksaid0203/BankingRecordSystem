@@ -50,6 +50,14 @@ int main(int argc, char* argv[]) {
 
 		else if (tmp == 5) {
 			// ALL ACCOUNT HOLDER LIST, 
+			list<Account> accountList = bms.getAccountList();
+			for(Account & account : accountList)
+			{
+				cout << account.getName() << '\n';
+				cout << account.getAccountNumber() << '\n';
+				cout << account.getAmount() << '\n';
+				cout << "-----------------" << endl;
+			}
 		}
 
 

@@ -1,4 +1,5 @@
 #include <string>
+#include <ostream>
 #include "Account.h"
 
 /*
@@ -7,6 +8,10 @@ Account::Account(std::string name, std::string _accountNumber, int _amount)
 {
 }
 */
+Account::Account()
+{
+	;
+}
 
 std::string Account::getName()
 {
@@ -22,3 +27,4 @@ int Account::getAmount()
 {
 	return amount;
 }
+

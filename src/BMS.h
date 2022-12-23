@@ -1,4 +1,5 @@
 #include <list>
+#include <string>
 #ifndef BMS_H
 #define BMS_H
 class BMS
@@ -8,6 +9,8 @@ private :
 
 public:
 	BMS();
+	std::list<Account> getAccountList();
 	void addAccount();
+	Account findAccountByNumber(std::string &);
 };
 #endif

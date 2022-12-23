@@ -20,3 +20,22 @@ void BMS::addAccount()
 	Account account(name, accountNumber, amount);
 	accountList.push_back(account);
 }
+
+Account BMS::findAccountByNumber(std::string & accountNumber)
+{
+	Account ret;
+	for(Account & account : accountList)
+	{
+		if(account.getAccountNumber() == accountNumber)
+		{
+			ret = account;
+			break;
+		}
+	}
+	return ret;
+}
+
+std::list<Account> BMS::getAccountList()
+{
+	return accountList;
+}
